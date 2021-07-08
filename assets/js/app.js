@@ -21,6 +21,10 @@ $(function(){
         spinColor:'black'
 
     })
+    $('.video').venobox({
+
+    })
+
     //$('.filtr_container').filterizr()
 
     $('.team_menber_container').slick({
@@ -35,7 +39,7 @@ $(function(){
             {
               breakpoint: 768,
               settings: {
-                slidesToShow: 3
+                slidesToShow: 3,
               }
             }
         ]
@@ -46,5 +50,22 @@ $(function(){
         arrows:false,
         fade:true,
         asNavFor: '.team_menber_container',
+    })
+
+    $('.comment_slick').slick({
+        arrows:false,
+        autoplay:true,
+        autoplaySpeed:3000,
+    })
+
+    $('.blog_slick').slick({
+        slidesToShow:3,
+        prevArrow:'<i class="blog_arrow blog_arrow_left fas fa-long-arrow-alt-left"></i>',
+        nextArrow:'<i class="blog_arrow blog_arrow_right fas fa-long-arrow-alt-right"></i>',
+    })
+    $('.clint_slick').slick({
+        slidesToShow:6,
+        arrows:false,
+        autoplay:true,
     })
 })
