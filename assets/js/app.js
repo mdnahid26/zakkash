@@ -1,12 +1,47 @@
 $(function(){
     'use stirct';
+
+    //sticky nav
     $(window).on("scroll",function(){
-        if($(window).scrollTop()>0){
+        if($(window).scrollTop() > 0){
             $('.navbar').addClass('stickyNav')
         }else{
             $('.navbar').removeClass('stickyNav')
         }
     })
+
+    //backToTop button
+    $(window).on("scroll",function(){
+        if($(window).scrollTop() >400){
+            $('#backToTop').fadeIn('slow')
+        }else{
+            $('#backToTop').fadeOut('slow')
+        }
+    })
+    $('#backToTop').on('click',function(){
+        $('html,body').animate({
+            scrollTop:0,
+        },1000)
+    })
+
+    //smoth scroll
+    $('a').on('click',function(e){
+        e.preventDefault()
+
+        if(this.hash !== ''){
+            var hash = this.hash
+
+            $('html,body').animate({
+                scrollTop: $(hash).offset().top - 77
+            },1000)
+        }
+    })
+
+    /*/preloader
+    $(window).on('load',function(){
+        $('.preloder').fadeOut(1000)
+    })*/
+
     $('#slider').slick({
         prevArrow:'<i class="slider_arrow slider_arrow_left fas fa-long-arrow-alt-left"></i>',
         nextArrow:'<i class="slider_arrow slider_arrow_right fas fa-long-arrow-alt-right"></i>',
@@ -62,6 +97,10 @@ $(function(){
         slidesToShow:3,
         prevArrow:'<i class="blog_arrow blog_arrow_left fas fa-long-arrow-alt-left"></i>',
         nextArrow:'<i class="blog_arrow blog_arrow_right fas fa-long-arrow-alt-right"></i>',
+        centerMode:true,
+        centerPadding:'0',
+        autoPlay:true,
+        autoPlaySpeed:3000,
     })
     $('.clint_slick').slick({
         slidesToShow:6,

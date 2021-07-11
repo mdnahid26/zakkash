@@ -80,6 +80,23 @@ p{
 }
 /*common css end*/
 
+/*preloder css start*/
+.preloder{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999999;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color:#fff;
+}
+/*preloder css end*/
+
 /*navbar css start*/
 .navbar{
     width: 100%;
@@ -96,7 +113,11 @@ p{
 }
 .navbar .navbar-collapse ul li a{
     text-transform: uppercase;
-    color: #fff;
+    color: #f1f1f1 !important;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+
 }
 /*navbar css end*/
 
@@ -765,6 +786,30 @@ p{
 #blog .blog_item img{
     display: block;
 }
+#blog .blog_slick{
+    position: relative;
+}
+#blog .blog_slick .blog_arrow{
+    position: absolute;
+    color: var(--heilight-color);
+    font-size: 18px;
+    width: 40px;
+    height: 30px;
+    border: 1px solid var(--heilight-color);
+    text-align: center;
+    line-height: 30px;
+    top:-20px;
+    transform:translateY(-50%);
+    z-index: 999;
+    cursor: pointer;
+}
+.blog_arrow_left{
+    left: 15px;
+}
+.blog_arrow_right{
+    right: 15px;
+    
+}
 #blog .blog_item h2{
     font-size: 25px;
     font-family: 'Raleway', sans-serif;
@@ -795,6 +840,7 @@ p{
     letter-spacing:1px;
     color: var(--heilight-color);
 }
+
 /*blog css end*/
 
 /*clint css start*/
@@ -826,3 +872,18 @@ p{
     padding: 60px 0 68px;
 }
 /*contact css end*/
+
+/*backToTop css start*/
+#backToTop{
+    font-size: 20px;
+    color: #fff;
+    background-color:var(--heilight-color);
+    position: fixed;
+    right: 15px;
+    bottom: 50px;
+    border: 2px solid var(--heilight-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 4444;
+    display:none;
+}
